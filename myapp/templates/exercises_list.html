@@ -1,0 +1,36 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Список упражнений
+{% endblock %}
+
+{% block page-lead %}
+Выберите из списка упражнение на вставку правильных грамматических конструкций
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="exercises-table">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <!-- <th scope="col" class="py-3">#</th> -->
+              <th scope="col" class="py-3"> <h3 class="fs-2">Упражнения</h3> </th>
+              <th scope="col" class="py-3"> <h3 class="fs-2">Описание</h3> </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for exercise_id, exercise, description in exercises %}
+            <tr>
+                <!-- <td class="py-3">{{ cnt }}</td> -->
+                <td class="py-3">
+                  <a href="{% url 'exercise' exercise_id %}">{{ exercise }}</a>
+                </td>
+                <td class="py-3">{{ description }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+</div>
+{% endblock %}

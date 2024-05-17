@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block pagetitle %}{% endblock %}</title>
+    <!-- load static -->
+    {% load static %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'bootstrap.min.css' %}"  media="screen,projection"/>
+    <!-- <link type="text/css" rel="stylesheet" href="{% static '/css/materialize.min.css' %}"  media="screen,projection"/> -->
+</head>
+<body>
+<main>
+    <div class="container">
+        <header class="border-bottom">
+            <div class="header">
+                <!-- <img src="{% static 'site_icon.svg' %}" alt="Проект про английский язык" width="25" height="25"/> -->
+                <a href="/" class="logo">
+                    <img src="{% static 'site_icon.svg' %}" alt="Проект про английский язык" width="20" height="20"/>
+                    <span>Проект про английский язык</span>
+                </a>
+                <a href="exercises-list">Упражнения</a>
+                <a href="stats">Статистика</a>
+                <a href="feedback">Отзыв</a>
+            </div>
+        </header>
+        <div class="p-2 mb-4 bg-light rounded-3" id="title-box">
+            <div class="container-fluid py-5">
+                <h1 class="display-1 fw-bold">{% block page-title %}{% endblock %}</h1>
+                <p class="col-md-8 fs-4">{% block page-lead %}{% endblock %}</p>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+        <footer class="footer pt-3 mt-4 text-muted border-top">© 2024</footer>
+    </div>
+</main>
+<!-- <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script> -->
+</body>
+</html>

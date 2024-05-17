@@ -1,0 +1,57 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Практика грамматики английского языка
+{% endblock %}
+
+{% block page-lead %}
+Делайте упражнения на вставку правильных грамматических конструкций в предложениях.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="project-contents">
+    <h2 class="pb-2 border-bottom">В этом проекте</h2>
+    <div class="row g-4 py-5 row-cols-2 row-cols-lg-3">
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Упражнения</h3>
+                <p>Выберите из списка упражнение по описанию и приступите к отработке грамматики.</p>
+                <a href="/exercises-list" class="btn btn-primary">Посмотреть</a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Статистика</h3>
+                <p>Узнайте, сколько всего упражнений и сколько вам уже покорилось.</p>
+                <a href="/stats" class="btn btn-primary">
+                    Изучить
+                </a>
+            </div>
+        </div>
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Оставить отзыв</h3>
+                <p>Заполните форму, описав ваши впечатления и пожелания.</p>
+                <a href="/feedback" class="btn btn-primary">
+                    Заполнить
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

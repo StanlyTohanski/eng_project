@@ -1,0 +1,37 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Оставить отзыв
+{% endblock %}
+
+{% block page-lead %}
+Заполните форму, описав ваши впечатления, пожелания или вопрос
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-4 py-5" id="feedback-form">
+    <form method="post"> {% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                <label for="name">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Иван" value required>
+            </div>
+            <div class="col-md-3">
+                <label for="email">Ваш контактный email:</label>
+                <input type="text" class="form-control input-lg" name="email" id="email" placeholder="ivan@ivanov.com" value required>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label for="fb_text">Ваш отзыв</label>
+            <textarea type="text" class="form-control input-lg" name="fb_text" id="fb_text" aria-describedby="definition_note" rows="3" required></textarea>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary" style="width: 100%; display: block" formaction="/send-feedback">Отправить</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

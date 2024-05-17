@@ -1,0 +1,35 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{{ exercise_name }}
+{% endblock %}
+
+{% block page-lead %}
+{{ exercise_description }}
+{% endblock %}
+
+{% block content %}
+<div class="blanks">
+  <ol>
+    <form action="{% url 'exercise' exercise_id %}" method="post">{% csrf_token %}
+      {% for task in tasks %}
+    <li class="classLi">
+      <p>
+        {% if task.done == 1 %}
+          {{ task.1st_part }} {{ task.true_input }} ({{ task.prim_form }}) {{ task.2nd_part }}
+        {% elif submit == 0 %}
+        {{ task.1st_part }} <input id="task" type="char" name="user_input_{{ task.task_id }}" maxlength="100" value="{{ task.user_input }}" /> ({{ task.prim_form }}) {{ task.2nd_part }}
+        {% else %}
+        {{ task.1st_part }} <input id="task" type="char" name="user_input_{{ task.task_id }}" maxlength="100" style="background-color: darksalmon;" value="{{ task.user_input }}" /> ({{ task.prim_form }}) {{ task.2nd_part }}
+        {% endif %}
+      </p>
+    </li>
+    {% endfor %}
+    <input type="submit" value="Submit" required="false">
+    <button type="submit" formaction="{% url 'exercise_drop' exercise_id %}">Drop results</button>
+    </form>
+  </ol>
+</div>
+
+
+{% endblock %}
