@@ -1,8 +1,25 @@
 [flake8]
-max-line-length = 100
+max-line-length = 110
 max-complexity = 10
 
 [tool.coverage.run]
 omit = [".*", "*/site-packages/*"]
 [tool.coverage.report]
 fail_under = 100
+[tool.poetry]
+name = "eng-project"
+version = "0.1.0"
+description = ""
+authors = ["Aleksey Klopov <klopov.an@phystech.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = {extras = ["toml"], version = "^7.5.1"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
