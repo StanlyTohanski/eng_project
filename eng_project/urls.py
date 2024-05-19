@@ -18,7 +18,7 @@ from myapp import views
 
 urlpatterns = [
     path('', views.index),
-    path('exercises-list', views.exercises_list, name='exercises_list'),
+    path('exercises-list', views.exercises_list, name='exercises-list'),
     path('exercise/<int:exercise_id>', views.exercise, name='exercise'),
     path('exercise_drop/<int:exercise_id>', views.exercise_drop, name='exercise_drop'),
     path('feedback', views.feedback),
